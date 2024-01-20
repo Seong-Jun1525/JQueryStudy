@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>직접선택자 사용</title>
+</head>
+<body>
+    <h1 id="title">제이쿼리</h1>
+    <h2 id="sub-tit">선택자</h2>
+    <h3 class="sub-tit2">직접 선택자</h3>
+    <h4>요소명 선택자</h4>
+    <h5>그룹1</h5>
+    <h6>그룹2</h6>
+    <p id="test">종속선택자</p>
+    <p class="test">종속선택자2</p>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        // id 선택자 사용
+        $(function() {
+            $("#title").css("color", "red")
+        })
+
+        // 전체 선택자 사용
+        $(function() {
+            $("*").css("border", "1px solid blue")
+        })
+
+        // id선택자 + 체이닝 기법
+        $(function() {
+            $("#sub-tit").css("background-color", "#ff0").css("border", "2px solid #f00") // 체이닝 기법 사용
+        })
+
+        // class선택자 + 체이닝
+        $(function() {
+            $(".sub-tit2").css("background-color", "#ff0").css("border", "2px dashed #f00")
+        })
+
+        // 요소명 선택자
+        $(function() {
+            $("h4").css("background-color", "#ff0").css("border", "2px dashed #f00g")
+        })
+
+        // 그룹 선택자
+        $(function() {
+            $("h5, h6").css("background-color", "#0ff").css("border", "2px dashed #f00")
+        })
+
+        // 종속 선택자
+        $(function() {
+            $("p#test").css("background-color", "#f0f").css("border", "2px dashed #f00")
+        })
+        $(function() {
+            $("p.test").css("background-color", "#f0f").css("border", "2px dashed #f00")
+        })
+    </script>
+</body>
+</html>
